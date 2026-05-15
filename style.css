@@ -1,63 +1,4 @@
-/* Update your .search-container and #searchBtn with this */
-
-.search-container {
-    display: flex;
-    width: 100%;
-    max-width: 800px;
-    /* Wider bar for better presence */
-    margin-bottom: 60px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-}
-
-#movieInput {
-    flex: 3;
-    /* Input gets more room */
-    padding: 25px 30px;
-    /* MASSIVE PADDING */
-    background: #000;
-    border: 1px solid #222;
-    border-left: 6px solid #8b0000;
-    /* Thicker blood line */
-    color: #fff;
-    font-size: 1.2rem;
-    outline: none;
-    font-family: 'Outfit', sans-serif;
-}
-
-#searchBtn {
-    flex: 1;
-    background: #8b0000;
-    color: #fff;
-    border: none;
-    font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
-    /* Bigger font bitch */
-    font-weight: 900;
-    letter-spacing: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    /* Ensure the button matches the input height perfectly */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#searchBtn:hover {
-    background: #b30000;
-    color: #ffd700;
-    /* Glows gold on hover */
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 0, 0, 0.6);
-    letter-spacing: 6px;
-    /* Expands slightly when you hover */
-}
-
-#searchBtn:active {
-    transform: scale(0.95);
-    /* Clicks like a real trigger */
-}
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;600;900&display=swap');
 
 * {
     margin: 0;
@@ -66,118 +7,138 @@
 }
 
 body {
-    background: radial-gradient(circle at center, #1a0f0f 0%, #050505 100%);
-    color: #e0e0e0;
-    font-family: 'Outfit', sans-serif;
-    min-height: 100vh;
+    background-color: #050505;
+    background-image: radial-gradient(circle at center, #0a1a0a 0%, #050505 100%);
+    color: #ffffff;
+    font-family: 'Kanit', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 20px;
+    min-height: 100vh;
+    padding: 60px 20px;
 }
 
-/* 1. Fix the Header */
+/* --- The Br/Ba Periodic Header --- */
 h1 {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
-    font-size: 3rem;
-    letter-spacing: 8px;
-    margin-bottom: 40px;
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 50px;
+    letter-spacing: -2px;
 }
 
-/* 2. Fix the Search Box (No more giant square) */
+/* Highlighting the 'B' like the logo */
+h1 span {
+    background: #1f4323; /* Meth Lab Green */
+    color: #ffffff;
+    padding: 5px 15px;
+    border: 3px solid #3d7c47;
+    margin-right: 5px;
+}
+
+/* --- Search Section (The Lab) --- */
 .search-container {
     display: flex;
     width: 100%;
-    max-width: 600px;
-    margin-bottom: 50px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    max-width: 800px;
+    background: #111;
+    border: 2px solid #3d7c47;
+    box-shadow: 0 0 20px rgba(61, 124, 71, 0.2);
+    margin-bottom: 60px;
 }
 
 #movieInput {
-    flex: 2;
-    padding: 15px 20px;
-    background: #000;
+    flex: 1;
+    padding: 25px;
+    background: transparent;
     border: none;
-    border-left: 4px solid #8b0000;
-    color: #fff;
-    font-size: 1rem;
+    color: #60fd7b; /* Chemical Green Text */
+    font-size: 1.3rem;
     outline: none;
+    font-weight: 300;
 }
 
 #searchBtn {
-    flex: 1;
-    background: #8b0000;
+    padding: 0 50px;
+    background: #3d7c47;
     color: #fff;
     border: none;
-    font-family: 'Cinzel', serif;
-    cursor: pointer;
+    font-weight: 900;
     text-transform: uppercase;
-    transition: 0.3s;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 2px solid #3d7c47;
 }
 
 #searchBtn:hover {
-    background: #b30000;
+    background: #60fd7b;
+    color: #000;
+    box-shadow: -5px 0 15px rgba(96, 253, 123, 0.4);
 }
 
-/* 3. Fix the Result Card (Poster on left, Info on right) */
+/* --- The Movie Result (The Product) --- */
 #movieResult {
     width: 100%;
     max-width: 900px;
-    background: rgba(20, 10, 10, 0.95);
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    background: rgba(10, 20, 10, 0.8);
+    border: 1px solid rgba(61, 124, 71, 0.3);
     display: flex;
     flex-direction: row;
-    /* Force side-by-side */
-    gap: 40px;
     padding: 40px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    gap: 40px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
 }
 
-/* Poster needs a fixed size so it doesn't float */
 #movieResult img {
     width: 280px;
     height: auto;
-    border: 1px solid #333;
+    border: 4px solid #3d7c47; /* Framed like a high-value asset */
+    filter: saturate(1.2) contrast(1.1);
 }
 
-/* Info container needs to take up remaining space */
 .movie-info {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    text-align: left;
-    /* Fixes that weird column look */
 }
 
 .movie-info h2 {
-    font-family: 'Cinzel', serif;
-    color: #d4af37;
-    font-size: 2.2rem;
-    border-bottom: 2px solid #8b0000;
+    font-size: 2.5rem;
+    color: #60fd7b;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3d7c47;
     padding-bottom: 10px;
-    margin-bottom: 10px;
 }
 
 .movie-info p {
-    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 300;
     line-height: 1.6;
+    color: #cfcfcf;
 }
 
 .movie-info b {
-    color: #8b0000;
+    color: #3d7c47;
     text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
-    margin-right: 8px;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-right: 10px;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
+/* --- Responsiveness --- */
+@media (max-width: 800px) {
     #movieResult {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    #searchBtn {
+        padding: 20px;
     }
 }
