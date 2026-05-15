@@ -1,0 +1,183 @@
+/* Update your .search-container and #searchBtn with this */
+
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    /* Wider bar for better presence */
+    margin-bottom: 60px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+#movieInput {
+    flex: 3;
+    /* Input gets more room */
+    padding: 25px 30px;
+    /* MASSIVE PADDING */
+    background: #000;
+    border: 1px solid #222;
+    border-left: 6px solid #8b0000;
+    /* Thicker blood line */
+    color: #fff;
+    font-size: 1.2rem;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+#searchBtn {
+    flex: 1;
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    /* Bigger font bitch */
+    font-weight: 900;
+    letter-spacing: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Ensure the button matches the input height perfectly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchBtn:hover {
+    background: #b30000;
+    color: #ffd700;
+    /* Glows gold on hover */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(139, 0, 0, 0.6);
+    letter-spacing: 6px;
+    /* Expands slightly when you hover */
+}
+
+#searchBtn:active {
+    transform: scale(0.95);
+    /* Clicks like a real trigger */
+}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Outfit:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at center, #1a0f0f 0%, #050505 100%);
+    color: #e0e0e0;
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* 1. Fix the Header */
+h1 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 3rem;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* 2. Fix the Search Box (No more giant square) */
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+#movieInput {
+    flex: 2;
+    padding: 15px 20px;
+    background: #000;
+    border: none;
+    border-left: 4px solid #8b0000;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+#searchBtn {
+    flex: 1;
+    background: #8b0000;
+    color: #fff;
+    border: none;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#searchBtn:hover {
+    background: #b30000;
+}
+
+/* 3. Fix the Result Card (Poster on left, Info on right) */
+#movieResult {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(20, 10, 10, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    display: flex;
+    flex-direction: row;
+    /* Force side-by-side */
+    gap: 40px;
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Poster needs a fixed size so it doesn't float */
+#movieResult img {
+    width: 280px;
+    height: auto;
+    border: 1px solid #333;
+}
+
+/* Info container needs to take up remaining space */
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+    /* Fixes that weird column look */
+}
+
+.movie-info h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2.2rem;
+    border-bottom: 2px solid #8b0000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.movie-info b {
+    color: #8b0000;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-right: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #movieResult {
+        flex-direction: column;
+        align-items: center;
+    }
+}
